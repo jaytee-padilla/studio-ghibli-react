@@ -1,26 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+// components
+import MovieList from './components/MovieList';
+
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      movies: []
+    };
+  }
+
+  componentDidMount() {
+    // grab all the studio ghibli films data from the api
+    // store the film data in 'movies' property of this.state
+    fetch('https://ghibliapi.herokuapp.com/films')
+      .then(response => response.json())
+      .then(films => this.setState({ movies: films}))
+      .catch(error => console.log("There was an error fetching data from the Studio Ghibli API"));
+  }
+
 	render() {
 		return (
 			<div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <MovieList movies={this.state.movies} />
+      </div>
 		)
 	}
 }

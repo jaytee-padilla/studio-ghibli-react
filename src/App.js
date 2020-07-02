@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './scss/styling.scss';
 
 // components
 import MovieList from './components/MovieList';

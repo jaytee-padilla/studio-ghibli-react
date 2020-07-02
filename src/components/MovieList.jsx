@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import '../scss/styling.scss';
 
 export default class MovieList extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -10,7 +11,7 @@ export default class MovieList extends Component {
       <div className="movie-list">
         {this.props.movies.map(ele => (
           <div className="movie-card" key={ele.id}>
-            <h3>{ele.title}</h3>
+            <h1>{ele.title}</h1>
             <p>{ele.description}</p>
           </div>
         ))}

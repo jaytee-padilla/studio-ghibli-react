@@ -25,6 +25,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+        <img src="https://www.pngkit.com/png/detail/78-788474_filmography-studio-ghibli-logo-png.png" />
         <MovieList movies={this.state.movies} />
       </div>
 		)

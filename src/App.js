@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './scss/styling.scss';
 
 // components
-import MovieList from './components/MovieList';
+import CardList from './components/CardList';
 
 class App extends Component {
   constructor() {
@@ -25,8 +25,8 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-        <img src="https://www.pngkit.com/png/detail/78-788474_filmography-studio-ghibli-logo-png.png" />
-        <MovieList movies={this.state.movies} />
+        <img alt="Studio Ghibli Logo" src="https://www.pngkit.com/png/detail/78-788474_filmography-studio-ghibli-logo-png.png" />
+        <CardList movies={this.state.movies} />
       </div>
 		)
 	}

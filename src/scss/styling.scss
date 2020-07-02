@@ -16,11 +16,11 @@ html {
       max-width: 35%;
     }
 
-    .movie-list {
+    .card-list {
       display: flex;
       flex-wrap: wrap;
   
-      .movie-card {
+      .card {
         margin: 1rem;
         background: white;
         box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);

@@ -10,7 +10,9 @@ class App extends Component {
     super();
 
     this.state = {
-      movies: []
+      movies: [],
+      filteredMovies: [],
+      inputValue: ''
     };
   }
 
@@ -19,22 +21,46 @@ class App extends Component {
     // store the film data in 'movies' property of this.state
     fetch('https://ghibliapi.herokuapp.com/films')
       .then(response => response.json())
-      .then(films => this.setState({ movies: films}))
+      .then(films => this.setState({ movies: films, filteredMovies: films }))
       .catch(error => console.log("There was an error fetching data from the Studio Ghibli API"));
   }
 
   // functions
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("yuh")
+
+    // filter out movie titles that don't match the value being searched
+    this.setState({
+      filteredMovies: this.state.movies.filter(movie => movie.title.toLowerCase().includes(this.state.inputValue.toLowerCase()))
+    });
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      inputValue: event.target.value
+    });
+  }
+
+  handleCardsReload = (event) => {
+    this.setState({
+      inputValue: '',
+      filteredMovies: this.state.movies
+    })
   }
 
 	render() {
 		return (
 			<div className="App">
         <img alt="Studio Ghibli Logo" src="https://www.pngkit.com/png/detail/78-788474_filmography-studio-ghibli-logo-png.png" />
-        <SearchBar handleSubmit={this.handleSubmit} />
-        <CardList movies={this.state.movies} />
+
+        <SearchBar
+          inputValue={this.state.inputValue}
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          handleCardsReload={this.handleCardsReload}
+        />
+
+        <CardList movies={this.state.filteredMovies} />
       </div>
 		)
 	}

@@ -41,6 +41,7 @@ class App extends Component {
     });
   }
 
+  // reloads all the movie cards on the page upon clicking the refresh icon that pops up next to the search bar
   handleCardsReload = (event) => {
     this.setState({
       inputValue: '',

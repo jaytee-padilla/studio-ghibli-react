@@ -7,6 +7,7 @@ const SearchBar = (props) => {
       <div className="field has-addons">
         <div className="control">
 
+          {/* If there is content in the search bar, display the refresh icon. If not, hide it */}
           <span
             className="icon"
             style={{visibility: props.inputValue.length > 0 ? "visible" : "hidden"}} onClick={props.handleCardsReload}

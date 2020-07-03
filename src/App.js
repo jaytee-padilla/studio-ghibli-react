@@ -3,6 +3,7 @@ import './scss/styling.scss';
 
 // components
 import CardList from './components/CardList';
+import SearchBar from './components/SearchBar';
 
 class App extends Component {
   constructor() {
@@ -22,10 +23,17 @@ class App extends Component {
       .catch(error => console.log("There was an error fetching data from the Studio Ghibli API"));
   }
 
+  // functions
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("yuh")
+  }
+
 	render() {
 		return (
 			<div className="App">
         <img alt="Studio Ghibli Logo" src="https://www.pngkit.com/png/detail/78-788474_filmography-studio-ghibli-logo-png.png" />
+        <SearchBar handleSubmit={this.handleSubmit} />
         <CardList movies={this.state.movies} />
       </div>
 		)

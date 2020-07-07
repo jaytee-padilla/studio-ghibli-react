@@ -15,7 +15,7 @@ const SearchBar = (props) => {
             <i className="fas fa-lg fa-sync-alt" aria-hidden="true"></i>
           </span>
 
-          <input className="input" type="text" value={props.inputValue} onChange={props.handleChange} name="search" />
+          <input className="input" type="text" value={props.inputValue} onChange={props.handleChange} name="search" autoComplete="off" />
         </div>
 
         <div className="control">

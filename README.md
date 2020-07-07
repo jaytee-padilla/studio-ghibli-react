@@ -3,4 +3,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Technologies Used:
 
 [Node-Sass](https://github.com/sass/node-sass)
+[Bulma](https://bulma.io/)
 

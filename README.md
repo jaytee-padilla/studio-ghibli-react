@@ -4,6 +4,6 @@ Based on Tania Rascia's awesome [How to Connect to an API with JavaScript](https
 
 ## Technologies Used:
 
-[Node-Sass](https://github.com/sass/node-sass)
+[Node-Sass](https://github.com/sass/node-sass)  
 [Bulma](https://bulma.io/)
 

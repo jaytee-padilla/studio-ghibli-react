@@ -4,6 +4,7 @@ import '../scss/styling.scss';
 // components
 import Card from './Card';
 
+// displays each card's data that's passed in via props
 const CardList = props => {
   return (
     <div className="card-list">
